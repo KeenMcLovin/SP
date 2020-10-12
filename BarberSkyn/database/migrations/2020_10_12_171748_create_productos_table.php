@@ -14,9 +14,11 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_proveedor');
-            $table->integer('id_establecimiento');
+            $table->increments('id');
+            $table->unsignedInteger('id_proveedor');
+            $table->foreign('id_proveedor')->references('id')->on('proveedores');
+            $table->unsignedInteger('id_establecimiento');
+            $table->foreign('id_establecimiento')->references('id')->on('establecimientos');
             $table->string('nombre');
             $table->float('costo', 5, 2);
             $table->float('precioPublico', 5, 2);
