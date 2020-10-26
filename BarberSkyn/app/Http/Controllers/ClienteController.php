@@ -27,6 +27,20 @@ class ClienteController extends Controller
         //
     }
 
+    public function crear(Request $request){
+        // return $request->all();
+        $dato = new \App\cliente;
+        $dato->nombre = $request->nombre;
+        $dato->apaterno = $request->apaterno;
+        $dato->contacto = $request->contacto;
+        $dato->usuario = $request->usuario;
+        $dato->contraseña = $request->contraseña;
+
+        $dato->save();
+
+        return back()->with('respuesta', 'Usuario registrado');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
