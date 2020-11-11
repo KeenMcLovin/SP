@@ -32,13 +32,15 @@ class ClienteController extends Controller
         $dato = new \App\cliente;
         $dato->nombre = $request->nombre;
         $dato->apaterno = $request->apaterno;
-        $dato->contacto = $request->contacto;
+        $dato->contacto = $request->telefono;
         $dato->usuario = $request->usuario;
         $dato->contraseña = $request->contraseña;
 
-        $dato->save();
-
-        return back()->with('respuesta', 'Usuario registrado');
+        if($dato->save()){
+            return back()->with('respuesta', 'Usuario registrado');
+        }else{
+            return back()->with('respuesta', 'Error al registrar, intente una vez más');
+        }
     }
 
     /**
