@@ -1,6 +1,7 @@
-@extends('struct')
+@extends('layouts.struct')
+@extends('layouts.navbar')
 
-@section('contenido')
+@section('body')
 
 	<div id="page-wrapper">
 

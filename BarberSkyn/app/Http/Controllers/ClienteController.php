@@ -22,14 +22,9 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
-    public function crear(Request $request){
-        // return $request->all();
-        $dato = new \App\cliente;
+    public function create(Request $request){
+        $dato = new \App\cliente;   
         $dato->nombre = $request->nombre;
         $dato->apaterno = $request->apaterno;
         $dato->contacto = $request->telefono;

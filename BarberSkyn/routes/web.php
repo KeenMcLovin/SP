@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('inicio');
 });
 
-Route::post('/', 'ClienteController@crear' )->name('registro.crear');
+Route::post('/', 'ClienteController@create')->name('registro.crear');
