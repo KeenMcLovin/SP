@@ -1,5 +1,5 @@
 @extends('layouts.struct')
-@extends('layouts.navbar')
+
 
 @section('body')
 
@@ -38,11 +38,12 @@
 									<div class="col-2">&nbsp;</div>
 									<div class="col-8">
 										<div class="form-group">
-											<form action="php/login.php" method="post">
+											<form action="{{route('registro.entrar')}}" method="post">
+												@csrf
 												<label for="usr" autocomplnete="off">Usuario:</label>
-												<input type="text" class="form-control" id="usr" placeholder="Nombre" name="usuario" id="usuario" required="required" onkeypress="return soloLetras(event)">
+												<input type="text" class="form-control" placeholder="Nombre" name="usuario" required="required" onkeypress="return soloLetras(event)">
 												<label for="pwd">Contraseña:</label>
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" name="contraseña" id="contraseña" required="required">
+													<input type="password" class="form-control" placeholder="Contraseña" name="contraseña" required="required">
 													<br>
 													<button class="btn btn-primary">Ingresar</button>
 												</form>
@@ -84,7 +85,7 @@
 									<div class="col-2">&nbsp;</div>
 									<div class="col-8">
 										<div class="form-group">
-											<form action="{{route('registro.crear')}}" method="post">
+											<form action="" method="post">
 												@csrf
 												<label for="usr"><b>Nombre:</b></label>
 												<input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required="required" onkeypress="return soloLetras(event)">

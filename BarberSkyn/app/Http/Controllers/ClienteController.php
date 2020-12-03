@@ -14,7 +14,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        return redirect('inicio');
     }
 
     /**
@@ -23,7 +23,7 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function create(Request $request){
+    public function store(Request $request){
         $dato = new \App\cliente;   
         $dato->nombre = $request->nombre;
         $dato->apaterno = $request->apaterno;
@@ -39,17 +39,6 @@ class ClienteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\cliente  $cliente
@@ -61,26 +50,16 @@ class ClienteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(cliente $cliente)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cliente $cliente)
+    public function update(Request $request, cliente $id)
     {
-        //
+        $id->update($request->all());
+        return response()->json($id);
     }
 
     /**
@@ -89,8 +68,9 @@ class ClienteController extends Controller
      * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cliente $cliente)
+    public function destroy(cliente $id)
     {
-        //
+        Practica::destroy($id);
+        return 'Registro eliminado';
     }
 }

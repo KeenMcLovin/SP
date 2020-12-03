@@ -9,8 +9,9 @@
         <nav id="nav">
             <ul>
                 <li class="current"><a href="#">Inicio</a></li>								
-                <li><a href="">Todos los produtos</a></li>
-                <li><a href="">Mis compras</a></li>
+                <li><a href="{{url('productos')}}">Todos los produtos</a></li>
+                <li><a href="{{url('miscompras')}}">Mis compras</a></li>
+                <li><a href="{{url('minegocio')}}">Mi negocio</a></li>
                 <li style="position: relative;">
                     <a style="background: white;" data-toggle="modal" data-target="#icon" name="login"><img src="images/lml1.jpeg" width="40px" style="opacity: 1;"><b></b></a>
                 </li>
