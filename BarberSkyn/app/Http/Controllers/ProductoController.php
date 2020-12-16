@@ -14,7 +14,14 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $proveedores = \DB::table('proveedores')
+                        ->select('proveedores.*')
+                        ->get();
+        $productos = \DB::table('productos')
+                        ->select('productos.*')
+                        ->orderBy('id','DESC')
+                        ->get();
+        return view('misproductos')->with('productos',$productos)->with('proveedores',$proveedores);
     }
 
     /**
@@ -22,9 +29,33 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $dato = new \App\producto;
+
+        //obtener imagen
+        $imagen = $request->file('imagenproducto');
+
+        //obtener nombre de la imagen
+        $nombreimagen = $imagen->getClientOriginalName();
+
+        $imagen->move('productos', $imagen->getClientOriginalName());
+
+        $dato->id_proveedor = $request->idprov;
+        $dato->id_establecimiento = "1";
+        $dato->nombre = $request->nombre;
+        $dato->costo = $request->costo;
+        $dato->precioPublico = $request->precioPublico;
+        $dato->foto = $nombreimagen;
+        $dato->descripcion = $request->descripcion;
+        $dato->cantidad = $request->cantidad;
+        $dato->estado = "activo";
+
+        if($dato->save()){
+            return back()->with('respuesta', 'Producto registrado');
+        }else{
+            return back()->with('respuestaerror', 'Error al registrar, intente una vez más');
+        }
     }
 
     /**

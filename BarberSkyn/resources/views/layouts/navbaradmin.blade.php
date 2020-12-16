@@ -7,12 +7,16 @@
     <nav id="nav" class="col-8 col-s-9" style="margin-top: -0%;" >
         <ul>
             <li><a href="{{url('inicio')}}">Inicio</a></li>								
-            <li><a href="{{url('misproveedores')}}">Mis proveedores</a></li>
-            <li><a href="{{url('misproductos')}}">Mis productos</a></li>
+            <li><a href="{{route('misproveedores')}}">Mis proveedores</a></li>
+            <li><a href="{{route('misproductos')}}">Mis productos</a></li>
             <li><a href="{{url('misventas')}}">Mis ventas</a></li>
             <li class="current"><a href="{{url('minegocio')}}">Mi negocio</a></li>
             <li style="position: relative;">
-                <a style="background: white;" data-toggle="modal" data-target="#icon" name="login"><img src="images/lml1.jpeg" width="40px" style="opacity: 1;"><b></b></a>
+                <a style="background: white;" data-toggle="modal" data-target="#icon" name="login"><img src="images/lml1.jpeg" width="40px" style="opacity: 1;">
+                    @if (session()->get('usuario'))
+                        <b>{{session()->get('usuario')}}</b>
+                    @endif
+                </a>
             </li>
         </ul>
     </nav>

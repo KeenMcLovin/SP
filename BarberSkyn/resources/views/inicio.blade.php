@@ -9,7 +9,7 @@
 <section id="banner" style="z-index: -2;">
     <header>
         <h2>Bienvenido y gracias por visitarnos.</h2>
-        <p>Productos para toda tipo.</p>
+        <p>Productos para todos.</p>
     </header>
 </section>
 
@@ -44,12 +44,6 @@
                 </section>
             </div>
         </div>
-        <footer>
-            <ul class="actions">
-                <li><a href="#" class="button large">Comienza tu estilo</a></li>
-                <li><a href="#" class="button alt large">Más información</a></li>
-            </ul>
-        </footer>
     </section>
 
 <!-- Main -->
@@ -75,7 +69,6 @@
                                     Da clcik aqui para conocer lo más vendido en nuestro sitio, pero date prisa que se agotan.</p>
                                     <footer>
                                         <ul class="actions">
-                                            <li><a href="#" class="button icon solid fa-file-alt btn-dark">Comenzar</a></li>
                                             <li><a href="#" class="button alt icon solid fa-comment btn-secondary" data-toggle="modal" data-target="#test1">Ver ejemplares</a></li>
                                             <div class="modal" id="test">
                                                 <div class="modal-dialog modal-lg">
@@ -120,7 +113,6 @@
                                     <p>En este apartado podras encontrar nuestros proximos productos a incluir en el stock de la tienda, echa un vistazo para poder ser de los primeros en conseguir uno nuevo, no te arrepentiras.</p>
                                     <footer>
                                         <ul class="actions">
-                                            <li><a href="#" class="button icon solid fa-file-alt btn-dark">Comenzar</a></li>
                                             <li><a href="#" class="button alt icon solid fa-comment btn-secondary" data-toggle="modal" data-target="#test1">Ver ejemplares</a></li>										
                                             <div class="modal" id="test1">
                                                 <div class="modal-dialog modal-lg">

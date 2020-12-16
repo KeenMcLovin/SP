@@ -38,7 +38,7 @@
 									<div class="col-2">&nbsp;</div>
 									<div class="col-8">
 										<div class="form-group">
-											<form action="{{route('registro.entrar')}}" method="post">
+											<form action="{{route('login')}}" method="post">
 												@csrf
 												<label for="usr" autocomplnete="off">Usuario:</label>
 												<input type="text" class="form-control" placeholder="Nombre" name="usuario" required="required" onkeypress="return soloLetras(event)">
@@ -85,7 +85,7 @@
 									<div class="col-2">&nbsp;</div>
 									<div class="col-8">
 										<div class="form-group">
-											<form action="" method="post">
+											<form action="{{ route('cliente.agregar') }}" method="post">
 												@csrf
 												<label for="usr"><b>Nombre:</b></label>
 												<input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required="required" onkeypress="return soloLetras(event)">
@@ -99,9 +99,9 @@
 												<label for="usr"><b>Usuario:</b></label>
 												<input type="text" class="form-control" placeholder="Usuario" name="usuario" id="usuario" required="required" onkeypress="return soloLetras(event)">
 												<label for="pwd"><b>Contraseña:</b></label>
-													<input type="password" class="form-control" placeholder="Contraseña" name="contraseña" id="contraseña" required="required">
-													<br>
-													<button class="btn btn-primary">Registrar</button>
+												<input type="password" class="form-control" placeholder="Contraseña" name="contraseña" id="contraseña" required="required">
+												<br>
+												<button class="btn btn-primary">Registrar</button>
 											</form>
 										</div>
 									</div>
@@ -142,7 +142,7 @@
 									<div class="col-2">&nbsp;</div>
 									<div class="col-8">
 										<div class="form-group">
-											<form action="php/registroNegocio.php" method="post" enctype="multipart/form-data">
+											<form action="" method="post" enctype="multipart/form-data">
 												@csrf
 												<label for="usr"><b>Nombre:</b></label>
 												<input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required="required" onkeypress="return soloLetras(event)">
@@ -185,86 +185,10 @@
 				@if ( session('respuesta') )
 					<div class="alert alert-success">{{ session('respuesta') }}</div>
 				@endif
+				@if ( session('respuestaerror') )
+					<div class="alert alert-danger">{{ session('respuestaerror') }}</div>
+				@endif
 			</div>
 		</div>
 	</section>
-
-	<section id="footer">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-4 col-6-medium col-12-small">
-					<section style="text-align: justify;">
-						<header>
-							<h2><b style="color:gray;">Referencias:</b></h2>
-						</header>
-						<ul class="divided">
-							<li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-							<li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-							<li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-							<li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-							<li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-							<li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-4 col-12-medium">
-					&nbsp;
-				</div>	
-				<div class="col-4 col-12-medium">
-					<section>
-						<header>
-							<h2>Vitae tempor lorem</h2>
-						</header>
-						<ul class="social">
-							<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-							<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-							<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-							<li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
-							<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-						</ul>
-						<ul class="contact">
-							<li>
-								<h3 style="color: black">Dirección:</h3>
-								<p>
-									Garage Inc.<br />
-									52740 Avenida Reforma<br />
-									CDMX
-								</p>
-							</li>
-							<li>
-								<h3 style="color: black">Correo:</h3>
-								<p><a href="#">villa.isc.tec@gmail.com</a></p>
-							</li>
-							<li>
-								<h3 style="color: black">Telefono:</h3>
-								<p>(722) 580-3007</p>
-							</li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-12">
-
-					<!-- Copyright -->
-						<div id="copyright">
-							<ul class="links">
-								<li>&copy; Barber Skyn. Todos los derechos reservados.</li><li>Diseñado en: HTML5, CSS3, PHP, JS, JQUERY</li>
-							</ul>
-						</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="{{asset('assets/js/jquery.min.js')}}"></script>
-	<script src="{{asset('assets/js/jquery.dropotron.min.js')}}"></script>
-	<script src="{{asset('assets/js/browser.min.js')}}"></script>
-	<script src="{{asset('assets/js/breakpoints.min.js')}}"></script>
-	<script src="{{asset('assets/js/util.js')}}"></script>
-	<script src="{{asset('assets/js/main.js')}}"></script>
-
 @stop

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\proveedor;
 use Illuminate\Http\Request;
 
-class ProveedorController extends Controller
+class Productoad extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,11 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $proveedores = \DB::table('proveedores')
-                        ->select('proveedores.*')
+        $productos = \DB::table('productos')
+                        ->select('productos.*')
                         ->orderBy('id','DESC')
                         ->get();
-        return view('misproveedores')->with('proveedores',$proveedores);
+        return view('allproductos')->with('productos',$productos);
     }
 
     /**
@@ -26,21 +25,9 @@ class ProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $dato = new \App\proveedor;
-        $dato->id_establecimiento = "1";
-        $dato->nombre = $request->nombre;
-        $dato->apaterno = $request->apaterno;
-        $dato->contacto = $request->contacto;
-        $dato->direccion = $request->direccion;
-        $dato->estado = "activo";
-
-        if($dato->save()){
-            return back()->with('respuesta', 'Proveedor registrado');
-        }else{
-            return back()->with('respuestaerror', 'Error al registrar, intente una vez más');
-        }
+        //
     }
 
     /**
@@ -57,10 +44,10 @@ class ProveedorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\proveedor  $proveedor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(proveedor $proveedor)
+    public function show($id)
     {
         //
     }
@@ -68,10 +55,10 @@ class ProveedorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\proveedor  $proveedor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(proveedor $proveedor)
+    public function edit($id)
     {
         //
     }
@@ -80,10 +67,10 @@ class ProveedorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\proveedor  $proveedor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, proveedor $proveedor)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -91,10 +78,10 @@ class ProveedorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\proveedor  $proveedor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(proveedor $proveedor)
+    public function destroy($id)
     {
         //
     }
